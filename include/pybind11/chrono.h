@@ -92,7 +92,7 @@ public:
         return PyDelta_FromDSU(dd.count(), ss.count(), us.count());
     }
 
-    PYBIND11_TYPE_CASTER(type, _("datetime.timedelta"));
+    PYBIND11_TYPE_CASTER(type, _py("datetime.timedelta"));
 };
 
 // This is for casting times on the system clock into datetime.datetime instances
@@ -180,7 +180,7 @@ public:
                                           localtime.tm_sec,
                                           us.count());
     }
-    PYBIND11_TYPE_CASTER(type, _("datetime.datetime"));
+    PYBIND11_TYPE_CASTER(type, _py("datetime.datetime"));
 };
 
 // Other clocks that are not the system clock are not measured as datetime.datetime objects
